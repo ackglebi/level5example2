@@ -43,7 +43,7 @@ class AddGameActivity : AppCompatActivity() {
         val formatter = SimpleDateFormat("dd-MM-yyyy")
         val date = formatter.parse(firstDate)
 
-        if (!checkFields()) {
+        if (checkFields()) {
             val addGame = Game(
                 title = etTitle.text.toString(),
                 platform = etTitle.text.toString(),
@@ -60,8 +60,8 @@ class AddGameActivity : AppCompatActivity() {
     }
 
     private fun checkFields() : Boolean {
-        return (etTitle.text.toString().isBlank() || etPlatform.text.toString().isBlank() || etDay.text.toString().isBlank()
-            || etMonth.text.toString().isBlank() || etYear.text.toString().isBlank()) || etMonth.text.toString().toInt() > 12 || etDay.text.toString().toInt() < 31
+        return (etTitle.text.toString().isNotBlank() || etPlatform.text.toString().isNotBlank() || etDay.text.toString().isNotBlank()
+            || etMonth.text.toString().isNotBlank() || etYear.text.toString().isNotBlank())
     }
 
 }

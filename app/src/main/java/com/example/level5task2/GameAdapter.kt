@@ -27,7 +27,6 @@ class GameAdapter(private var games: List<Game>) : RecyclerView.Adapter<GameAdap
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val formatter = SimpleDateFormat("E MMM yy HH:mm:ss z Z")
         fun bind(game: Game) {
             itemView.run {
                 tvTitle.text = game.title
